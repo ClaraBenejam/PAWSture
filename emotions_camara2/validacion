@@ -1,0 +1,45 @@
+Validación del modelo de reconocimiento de emociones
+
+Para evaluar el rendimiento del modelo implementado (basado en DeepFace), se realizó una validación utilizando el conjunto de datos público FER2013, concretamente el subconjunto "test", formado por imágenes de rostros en escala de grises clasificadas en siete emociones: angry, disgust, fear, happy, sad, surprise y neutral.
+
+1. Metodología
+
+Se recorrieron todas las imágenes del conjunto de test (696 imágenes).
+
+Cada imagen fue procesada por la función analyze_frame, que detecta el rostro y asigna la emoción predominante.
+
+Se comparó la predicción del modelo con la etiqueta real de la carpeta donde se encontraba la imagen.
+
+Se calcularon:
+
+El número total de aciertos
+
+La accuracy global
+
+La matriz de confusión para analizar en detalle los errores por clase
+
+2. Resultados cuantitativos
+
+Imágenes analizadas: 696
+
+Aciertos totales: 411
+
+Accuracy global: 59,1 %
+
+Este valor es consistente con los trabajos publicados sobre el dataset FER2013, donde modelos preentrenados suelen situarse entre el 60–70% dependiendo del preprocesado. Por tanto, el rendimiento obtenido es razonable y esperado.
+
+3. Análisis cualitativo (matriz de confusión)
+
+La emoción happy es la mejor reconocida (177 aciertos), como es habitual en este dataset.
+
+Las emociones angry, fear, sad y neutral muestran errores cruzados significativos entre sí, especialmente entre sad y neutral, debido a la similitud de microexpresiones.
+
+La emoción disgust es la más difícil, obteniendo solo 7 aciertos, lo cual coincide con la literatura: disgust suele ser la clase más problemática en FER2013.
+
+Las emociones fear y surprise se confunden con frecuencia, debido a características faciales similares (ojos muy abiertos, cejas levantadas).
+
+4. Conclusión
+
+El modelo muestra un rendimiento moderado pero consistente, funcionando muy bien en emociones fáciles como happy y neutral, y mostrando mayores dificultades en emociones complejas como disgust y fear. Este comportamiento coincide con lo esperado para clasificadores basados en FER2013.
+
+El proceso de validación confirma que el modelo es funcional y permite medir de forma objetiva su precisión en un conjunto estándar de referencia.
