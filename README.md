@@ -1,7 +1,10 @@
 ## PAWSture
-Proyecto Ingeniería y Sistemas de Datos
 
-#Installation process.
+#Installation process: 
+  The installation and initialization process of the Pawsture System and its conda environments is detailed in the annexes K and L of the document.
 
-- yolo11 installation (and its dependencies): pip install ultralytics
-- pytorch installation: Despite it being installed already by the previous command, it is recommended to change its version to one that can utilze the GPU device. Its version will entirely depend on the version of CUDA                                  installed already in the device. The one used originally is torch 2.3.1.
+#Environments:
+  Pawsture has been developed while using several miniconda environments. Thus it is heavily recommended to use them in order to deploy Pawsture. To install them use the .yaml in the folder environments and follow the            installation process of annex L of the document.
+    
+#CUDA:
+  It is important to know that this proyect was developed while using CUDA 12.1, changes of the version of CUDA are bound to generate problems with the dependecies
